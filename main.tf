@@ -31,3 +31,10 @@ resource "azurerm_virtual_network" "vnet-spoke" {
   CostCenter  = "Pkrtechsub"
   }
 }
+
+resource "azurerm_subnet" "pkrtech-sn" {
+  name                 = "sn-frontend"
+  resource_group_name  = azurerm_resource_group.rg-terraform.name
+  virtual_network_name = azurerm_virtual_network.vnet-spoke.name
+  address_prefixes     = ["10.64.2.20/28"]
+}
