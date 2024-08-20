@@ -26,15 +26,15 @@ resource "azurerm_virtual_network" "vnet-spoke" {
   location = azurerm_resource_group.rg-terraform.location
   address_space = ["10.64.2.0/24"]
 
+  subnet {
+  name           = "subnet1"
+  address_prefix = "10.64.2.0/28"
+
   tags = {
   environment = "dev"
   CostCenter  = "Pkrtechsub"
   }
+
+
 }
 
-resource "azurerm_subnet" "pkrtech-sn" {
-  name                 = "sn-frontend"
-  resource_group_name  = azurerm_resource_group.rg-terraform.name
-  virtual_network_name = azurerm_virtual_network.vnet-spoke.name
-  address_prefixes     = ["10.64.2.20/28"]
-}
