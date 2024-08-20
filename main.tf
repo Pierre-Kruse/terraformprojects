@@ -34,5 +34,5 @@ resource "azurerm_virtual_network" "vnet-spoke" {
   environment = "dev"
   CostCenter  = "Pkrtechsub"
   }
-}
+}                            
 }
