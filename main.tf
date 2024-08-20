@@ -28,13 +28,12 @@ resource "azurerm_virtual_network" "vnet-spoke" {
 
   subnet {
   name           = "subnet1"
-  address_prefix = "10.64.2.0/28"
+  address_prefixes = "10.64.2.20/28"
 
   tags = {
   environment = "dev"
   CostCenter  = "Pkrtechsub"
   }
 
-
 }
-
+}
